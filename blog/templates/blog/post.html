@@ -1,0 +1,32 @@
+
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title %}Публикация — MY BLOG{% endblock %}
+
+{% block content %}
+
+<article class="article">
+
+    <img src="{% static 'blog/images/blog-cover.png' %}"
+     alt="Иллюстрация публикации">
+
+    <h1>Искусство цифрового дизайна</h1>
+
+    <span class="post-date">23 ноября 2026</span>
+
+    <p>
+        Цифровой дизайн объединяет технологии,
+        творчество и визуальную коммуникацию.
+        Сегодня дизайнеры используют множество
+        инструментов для создания уникальных проектов.
+    </p>
+
+</article>
+
+<a href="{% url 'home' %}" class="read-more">
+    ← Вернуться на главную
+</a>
+
+{% endblock %}

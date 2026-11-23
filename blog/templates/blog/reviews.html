@@ -1,0 +1,52 @@
+
+{% extends 'blog/base.html' %}
+
+{% block title %}Книга отзывов — MY BLOG{% endblock %}
+
+{% block content %}
+
+<section class="reviews-page">
+
+    <h1>Книга отзывов</h1>
+
+    <p class="reviews-description">
+        Нам важно ваше мнение! Оставьте свой отзыв о нашем блоге.
+    </p>
+
+    <div class="review-form">
+        <h2>Оставить отзыв</h2>
+
+        <form method="post">
+            {% csrf_token %}
+
+            {{ form.as_p }}
+
+            <button type="submit" class="submit-button">
+                Отправить отзыв
+            </button>
+        </form>
+    </div>
+
+    <div class="reviews-list">
+
+        <h2>Отзывы посетителей</h2>
+
+        {% for review in reviews %}
+
+            <article class="review-card">
+                <h3>{{ review.full_name }}</h3>
+
+                <p>{{ review.text }}</p>
+            </article>
+
+        {% empty %}
+
+            <p>Пока отзывов нет. Будьте первым!</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'blog/base.html' %}
+
+{% load static %}
+
+{% block title %}Главная — MY BLOG{% endblock %}
+
+{% block content %}
+
+<section class="hero">
+    <h1>Добро пожаловать в BLACKCUBE BLOG</h1>
+    <p>Design. Technology. Creativity.</p>
+</section>
+
+<h2 class="section-title">Последние публикации</h2>
+
+<div class="posts">
+
+    <article class="post-card">
+        <img src="{% static 'blog/images/blog-cover.png' %}"
+     alt="Обложка публикации">
+        <div class="post-info">
+            <span class="post-date">23 ноября 2026</span>
+            <h3>Искусство цифрового дизайна</h3>
+            <p>Как современные технологии меняют мир визуального искусства.</p>
+            <a href="{% url 'post' 1 %}" class="read-more">
+                Читать далее →
+            </a>
+        </div>
+    </article>
+
+    <article class="post-card">
+        <img src="{% static 'blog/images/blog-cover.png' %}"
+     alt="Обложка публикации">
+        <div class="post-info">
+            <span class="post-date">20 ноября 2026</span>
+            <h3>Мир 3D-моделирования</h3>
+            <p>Знакомство с трёхмерной графикой и её возможностями.</p>
+            <a href="{% url 'post' 2 %}" class="read-more">
+                Читать далее →
+            </a>
+        </div>
+    </article>
+
+</div>
+
+{% endblock %}
